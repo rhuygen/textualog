@@ -124,7 +124,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
     ],
-    packages=["textualog"],
+    packages=["textualog", "textualog.renderables", "textualog.widgets"],
     extras_require={
         "fancy output": ["rich"]
     },
