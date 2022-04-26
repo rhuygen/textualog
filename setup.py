@@ -7,7 +7,7 @@ from setuptools import setup, Command
 
 # Package meta-data.
 
-NAME = "Logger TUI"
+NAME = "textualog"
 PACKAGE_NAME = "textualog"
 DESCRIPTION = "Display, filter and search logging messages in the terminal."
 URL = "https://github.com/rhuygen/textualog"
@@ -120,7 +120,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Environment :: Console",
         "Topic :: Utilities",
-        "Topic :: Logging",
         "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
