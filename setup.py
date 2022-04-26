@@ -130,7 +130,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "textualog=textualog.__main__",
+            "textualog=textualog.__main__:main",
         ]
     },
     # $ setup.py publish support.

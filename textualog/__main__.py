@@ -114,4 +114,9 @@ class TextualLog(App):
         await self.logs.update(syntax)
 
 
-TextualLog.run(title="Textual Log Viewer", log="textual.log")
+def main():
+    TextualLog.run(title="Textual Log Viewer", log="textual.log")
+
+
+if __name__ == "__main__":
+    main()
