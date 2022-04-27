@@ -125,6 +125,7 @@ class NamespaceTree(TreeControl[NamespaceEntry]):
         if not namespace_entry.is_parent:
             await self.emit(EntryClick(self, namespace_entry.name))
         else:
+            await self.emit(EntryClick(self, namespace_entry.name))
             if not message.node.loaded:
                 await self.load_tree(message.node)
                 await message.node.expand()

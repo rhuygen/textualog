@@ -20,6 +20,10 @@ VERSION = None
 
 HERE = pathlib.Path(__file__).parent
 
+# The directory containing the source code
+
+SRC = HERE / "src"
+
 # The text of the README file
 
 README = (HERE / "README.md").read_text()
@@ -28,7 +32,7 @@ README = (HERE / "README.md").read_text()
 
 about = {}
 if VERSION is None:
-    with open(os.path.join(HERE, PACKAGE_NAME, '__version__.py')) as f:
+    with open(os.path.join(SRC, PACKAGE_NAME, '__version__.py')) as f:
         exec(f.read(), about)
         VERSION = about['__version__']
 
@@ -125,9 +129,8 @@ setup(
         "Programming Language :: Python :: 3.8",
     ],
     packages=["textualog", "textualog.renderables", "textualog.widgets"],
-    extras_require={
-        "fancy output": ["rich"]
-    },
+    package_dir={"": "src"},
+    install_requires=["rich", "textual"],
     entry_points={
         "console_scripts": [
             "textualog=textualog.__main__:main",

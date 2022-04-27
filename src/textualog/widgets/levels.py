@@ -1,3 +1,5 @@
+import logging
+
 from rich.panel import Panel
 from rich.table import Table
 from textual.reactive import Reactive
@@ -42,3 +44,16 @@ class Levels(Widget):
         )
 
         return panel
+
+    def is_on(self, level: int):
+        if level == logging.DEBUG:
+            return self.debug_level
+        elif level == logging.INFO:
+            return self.info_level
+        elif level == logging.WARNING:
+            return self.warning_level
+        elif level == logging.ERROR:
+            return self.error_level
+        elif level == logging.CRITICAL:
+            return self.critical_level
+        return False
