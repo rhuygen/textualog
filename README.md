@@ -2,6 +2,8 @@
 
 Display, filter and search logging messages in the terminal.
 
+![screenshot](textualog.png)
+
 This project is powered by [rich](https://github.com/Textualize/rich) and [textual](https://github.com/Textualize/textual).
 
 Some of the ideas and code in this project are based on:
