@@ -1,7 +1,7 @@
 import logging
 import time
 
-from textualog.renderables.record import LogRecord
+from textualog.renderables.logrecord import LogRecord
 
 
 def test_simple_construction():

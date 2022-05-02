@@ -1,4 +1,5 @@
 /build/
 /dist/
-/textualog.egg-info/
+textualog.egg-info
 textual.log
+textualog.log

@@ -121,7 +121,6 @@ class NamespaceTree(TreeControl[NamespaceEntry]):
 
     async def handle_tree_click(self, message: TreeClick[NamespaceEntry]) -> None:
         namespace_entry = message.node.data
-        self.app.log(f"{namespace_entry = !s}")
         if not namespace_entry.is_parent:
             await self.emit(EntryClick(self, namespace_entry.name))
         else:

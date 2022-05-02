@@ -31,12 +31,18 @@ class LogRecord:
             level: int = logging.INFO,
             created: float = None,
             ts: str = None,
+            process: str = None,
+            caller: str = None,
+            process_id: int = None,
             **kwargs
     ):
         self.msg = msg
         self.level = level
         self.ts = ts
         self.created = created or to_timestamp(self.ts) if self.ts else time.time()
+        self.process = process
+        self.caller = caller
+        self.process_id = process_id
 
     def __str__(self) -> str:
         text = (

@@ -57,3 +57,12 @@ class Levels(Widget):
         elif level == logging.CRITICAL:
             return self.critical_level
         return False
+
+    def __str__(self):
+        return (
+            f"DEBUG={'ON' if self.debug_level else 'OFF'}, "
+            f"INFO={'ON' if self.info_level else 'OFF'}, "
+            f"WARNING={'ON' if self.warning_level else 'OFF'}, "
+            f"ERROR={'ON' if self.error_level else 'OFF'}, "
+            f"CRITICAL={'ON' if self.critical_level else 'OFF'}"
+        )

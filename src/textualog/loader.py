@@ -1,9 +1,14 @@
-from enum import Enum
+from itertools import islice
 from typing import List
 
 from rich.text import Text
-from textualog.renderables.record import LevelName
-from textualog.renderables.record import LogRecord
+
+from .renderables.logrecord import LevelName
+from .renderables.logrecord import LogRecord
+from .widgets.levels import Levels
+
+DEFAULT_NUM_LINES = 100
+MAX_NUM_LINES = 100_000
 
 
 # KeyValueLoader is a class that loads log files that have a key-value format.
@@ -20,21 +25,40 @@ class KeyValueLoader:
     def __init__(self, filename: str):
         self.filename = filename
         self._lines: List[str] = ...
+        """The original lines read from the log file."""
+        self._size = 0
+        """The number of lines in the log file."""
         self._records = []
+        """Processed lines"""
+        self._offset = 0
+        """The line number of the first record, i.e. which line in the log file."""
 
     def load(self):
         """Loads the complete log file in a list of strings."""
         with open(self.filename, 'r') as fd:
             self._lines = fd.read().split('\n')
 
-    def process(self, item: slice = slice(None, None, None)):
+        self._size = len(self._lines)
+
+    def size(self) -> int:
+        """Returns the total number of lines in the log file."""
+        return self._size
+
+    def process(self, start: int = 0, num_lines: int = DEFAULT_NUM_LINES, levels: Levels = None):
         """Process a number of lines and creates a list of Records for those lines."""
+
         # * could keep track of those line that have been processed -> no need to process again
         # * sub_messages are e.g. Traceback or multiline messages
+
+        self._offset = start
+
         sub_message: List[str] = []
         in_sub_message = False
         records = []
-        for line in self._lines[item]:
+        match_count = 0
+        for count, line in enumerate(islice(self._lines, start, None)):
+            if count > MAX_NUM_LINES:
+                break
             if not line.startswith("level="):
                 in_sub_message = True
                 sub_message.append(line)
@@ -45,79 +69,84 @@ class KeyValueLoader:
                 in_sub_message = False
 
             level, ts, process, process_id, caller, msg = line.split(maxsplit=5)
+            level = LevelName[level[6:]].value
 
-            record = LogRecord(
-                level=LevelName[level[6:]].value,
-                ts=ts[3:],
-                process=process,
-                process_id=process_id,
-                caller=caller,
-                msg=msg[4:]
-            )
+            if levels is None or levels.is_on(level):
 
-            # record = logging.LogRecord(
-            #     name=fn,
-            #     level=logging._nameToLevel[level[6:]],
-            #     pathname=__file__,
-            #     lineno=caller.split(':')[1],
-            #     # created=datetime.strptime(date_string=ts[3:], format="%Y-%m-%dT%H:%M:%S.%f+0000").timestamp(),
-            #     msg=msg[4:],
-            #     # process=process_id[11:],
-            #     args=(),
-            #     exc_info=None,
-            #     func=None,
-            #     sinfo=None
-            # )
-            # record._cutelog = None
+                record = LogRecord(
+                    level=level,
+                    ts=ts[3:],
+                    process=process[8:],
+                    process_id=process_id[11:],
+                    caller=caller[7:],
+                    msg=msg[5:-1]  # also removes the double quotes around the message
+                )
 
-            records.append(record)
+                records.append(record)
+                match_count += 1
+
+            if match_count >= num_lines:
+                break
 
         # if sub_message:
         #     print('\n'.join(sub_message))
-
-        # print(f"{len(records)=}")
 
         self._records = records
 
     def __str__(self):
         return "\n".join(self._records)
 
-    def __rich__(self) -> str:
-        return self._get_rich_lines()
+    def reprocess(self, start: int, num_lines: int, levels: Levels):
+        # start and stop are line numbers of the log file
 
-    def _get_rich_lines(self, item=slice(None, 20, None)):
-        # print(f"{item=}")
-        records = self._records[item] if isinstance(item, slice) else [self._records[item]]
+        # item is the correct mapping of the requested lines in the self._records list.
+        #
+        # if not 0 < start - offset < len(self._records) -> reprocess the lines
+        # if not 0 < start + num_lines - offset < len(self._records) -> reprocess the lines
+
+        nr_records = len(self._records)
+
+        if not 0 <= start - self._offset < nr_records or \
+                not 0 < start + num_lines - self._offset <= nr_records:
+            self.process(start, num_lines, levels)
+
+    def get_records(self,
+                    start: int = 0,
+                    num_lines: int = DEFAULT_NUM_LINES,
+                    levels: Levels = None) -> List[LogRecord]:
+
+        self.process(start, num_lines, levels)
+
+        return self._records
+
+    def get_text(self, start: int = 0, num_lines: int = DEFAULT_NUM_LINES, levels: Levels = None) -> Text:
+
+        self.process(start, num_lines, levels)
+
+        record: LogRecord
         text = Text()
         [
             text.append(record.__rich__()).append('\n')
-            for record in records
+            for record in self._records
         ]
         return text
-
-    def __getitem__(self, item):
-        return self._records[item]
-
-    @property
-    def lines(self):
-        parent = self
-
-        class Lines:
-            def __getitem__(self, item):
-                return parent._get_rich_lines(item)
-
-        return Lines()
 
 
 if __name__ == "__main__":
 
     fn = '/Users/rik/Desktop/general.log'
     fn = '/Users/rik/data/CSL/log/general.log.2022-04-08'
+    fn = '/Users/rik/data/CSL/log/general.log'
+
     loader = KeyValueLoader(fn)
     loader.load()
-    loader.process(slice(20))
+    loader.process(0, 20, None)
 
     import rich
-    rich.print(loader.lines[:4])
+    rich.print(loader.get_text(0, 20))
     rich.print("---")
-    rich.print(loader[2:4])
+    rich.print(loader.get_text(2, 4))
+    rich.print("---")
+    rich.print(loader.get_text(18, 2))
+    rich.print("---")
+    rich.print(loader.get_text(20, 2))

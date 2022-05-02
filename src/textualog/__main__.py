@@ -6,8 +6,6 @@ from textual.app import App
 from textual.keys import Keys
 from textual.reactive import Reactive
 from textual.widgets import Header
-from textual.widgets import Placeholder
-from textual.widgets import ScrollView
 
 from . import __version__
 from .loader import KeyValueLoader
@@ -16,6 +14,7 @@ from .widgets.footer import Footer
 from .widgets.help import Help
 from .widgets.levels import Levels
 from .widgets.namespaces import Namespaces
+from .widgets.recordinfo import RecordInfo
 from .widgets.records import Records
 
 
@@ -71,18 +70,22 @@ class TextualLog(App):
 
         self.levels = Levels()
         self.records = Records()
+        self.record_info = RecordInfo()
 
         grid.place(
             area1=self.records,
             area2=self.levels,
-            area3=Placeholder(name="Record Info"),
+            area3=self.record_info,
         )
 
         if self.filename:
             self.loader = KeyValueLoader(self.filename)
             self.loader.load()
-            self.loader.process(slice(0, 500, None))
-            self.records.update(self.loader[self.cursor:self.cursor+50])
+            self.loader.process(0, 500, None)
+
+            # The height of the self.records view is not yet known, so we take a large enough number
+
+            self.records.update(self.loader.get_records(0, 500, None))
 
     async def on_load(self) -> None:
         """
@@ -97,42 +100,48 @@ class TextualLog(App):
         # The height of the text area of the Records panel
 
         height = self.records.size.height - 2
+        size = self.loader.size()
 
-        self.app.sub_title = f"{event.key=}"
+        self.app.sub_title = f"Key pressed: {event.key}"
 
         if event.key == "d":
             self.levels.debug_level = not self.levels.debug_level
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == "i":
             self.levels.info_level = not self.levels.info_level
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == "w":
             self.levels.warning_level = not self.levels.warning_level
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == "e":
             self.levels.error_level = not self.levels.error_level
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == "c":
             self.levels.critical_level = not self.levels.critical_level
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key in "nN":
             self.show_namespaces = not self.show_namespaces
         elif event.key == Keys.Escape:
             self.show_help = False
             self.show_namespaces = False
         elif event.key == Keys.Down:
-            self.cursor = min(500, self.cursor + 1)
-            self.records.replace(self.loader[self.cursor:self.cursor + height])
+            self.cursor = min(size, self.cursor + 1)
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.Up:
             self.cursor = max(0, self.cursor - 1)
-            self.records.replace(self.loader[self.cursor:self.cursor + height])
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.PageDown:
-            self.cursor = min(500, self.cursor+(height-1))
-            self.records.replace(self.loader[self.cursor:self.cursor + height])
+            self.cursor = min(size, self.cursor+(height-1))
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.PageUp:
             self.cursor = max(0, self.cursor-(height-1))
-            self.records.replace(self.loader[self.cursor:self.cursor+height])
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.End:
-            self.cursor = 500 - height
-            self.records.replace(self.loader[self.cursor:self.cursor + height])
+            self.cursor = size - height
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.Home:
             self.cursor = 0
-            self.records.replace(self.loader[self.cursor:self.cursor+height])
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
 
         self.records.refresh(layout=True, repaint=True)
 

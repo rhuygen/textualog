@@ -10,7 +10,7 @@ class Help(Widget):
     def render(self) -> Panel:
         return Panel(
             Shortcuts(),
-            title="{} [bold]help[/]".format(INFO),
+            title=f"{INFO} [bold]help[/]",
             border_style=styles.BORDER_FOCUSED,
             box=styles.BOX,
             title_align="left",
