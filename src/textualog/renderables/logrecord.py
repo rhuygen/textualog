@@ -34,6 +34,7 @@ class LogRecord:
             process: str = None,
             caller: str = None,
             process_id: int = None,
+            selected: bool = False,
             **kwargs
     ):
         self.msg = msg
@@ -43,6 +44,7 @@ class LogRecord:
         self.process = process
         self.caller = caller
         self.process_id = process_id
+        self.selected = selected
 
     def __str__(self) -> str:
         text = (
@@ -51,6 +53,15 @@ class LogRecord:
             f"msg=\"{self.msg}\""
         )
         return text
+
+    def get_text(self) -> Text:
+        color = LevelColor[LevelName(self.level).name].value
+        return Text(
+            f"{format_datetime(from_timestamp(self.created))} "
+            f"{LevelName(self.level).name} "
+            f"{self.msg}",
+            style=f"{color} {'on grey93' if self.selected else ''}"
+        )
 
     def __rich__(self) -> Text:
         color = LevelColor[LevelName(self.level).name].value
