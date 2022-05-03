@@ -1,5 +1,6 @@
 import argparse
 import sys
+from pathlib import Path
 
 from textual import events
 from textual.app import App
@@ -37,6 +38,7 @@ class TextualLog(App):
         super().__init__(**kwargs)
         self.filename = filename
         self.cursor = 0
+        self.loader = None
 
     async def on_mount(self, event: events.Mount) -> None:
         """
@@ -96,6 +98,9 @@ class TextualLog(App):
         await self.bind("?", "toggle_help", "Help")
 
     async def on_key(self, event) -> None:
+
+        if self.loader is None:
+            return
 
         # The height of the text area of the Records panel
 
@@ -165,6 +170,9 @@ class TextualLog(App):
 
 
 def main():
+    from rich.traceback import install
+    install(show_locals=False)
+
     parser = argparse.ArgumentParser(
         description="Textual Log Viewer, display, filter and search log files",
         formatter_class=argparse.RawTextHelpFormatter,
@@ -187,6 +195,9 @@ def main():
     )
 
     args = parser.parse_args()
+
+    if args.log and not Path(args.log).exists():
+        raise FileNotFoundError(f"No such file {args.log}")
 
     TextualLog.run(title="Textual Log Viewer", log=None, filename=args.log)
 
