@@ -126,6 +126,8 @@ class TextualLog(App):
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key in "nN":
             self.show_namespaces = not self.show_namespaces
+        elif event.key == "r":
+            self.loader.load()
         elif event.key == Keys.Escape:
             self.show_help = False
             self.show_namespaces = False
