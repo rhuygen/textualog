@@ -131,6 +131,7 @@ setup(
     packages=["textualog", "textualog.renderables", "textualog.widgets"],
     package_dir={"": "src"},
     package_data={"": ["textualog.png", "examples/*.log"]},
+    include_package_data=True,
     install_requires=["rich", "textual"],
     entry_points={
         "console_scripts": [
