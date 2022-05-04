@@ -144,7 +144,7 @@ class TextualLog(App):
             self.cursor = max(0, self.cursor-(height-1))
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.End:
-            self.cursor = size - height
+            self.cursor = max(0, size - height)
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.Home:
             self.cursor = 0
