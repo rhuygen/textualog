@@ -16,6 +16,14 @@ class LevelColor(Enum):
     CRITICAL = "bright_magenta"
 
 
+class LevelColorSelected(Enum):
+    DEBUG = "grey93 on grey46"
+    INFO = "green3 on dark_green"
+    WARNING = "orange1 on dark_orange3"
+    ERROR = "orchid2 on red3"
+    CRITICAL = "magenta3 on dark_magenta"
+
+
 class LevelName(Enum):
     DEBUG = logging.DEBUG
     INFO = logging.INFO
@@ -55,12 +63,13 @@ class LogRecord:
         return text
 
     def get_text(self) -> Text:
-        color = LevelColor[LevelName(self.level).name].value
+        level = LevelName(self.level).name
+        color = LevelColorSelected[level].value if self.selected else LevelColor[level].value
         return Text(
             f"{format_datetime(from_timestamp(self.created))} "
             f"{LevelName(self.level).name} "
             f"{self.msg}",
-            style=f"{color} {'on grey93' if self.selected else ''}"
+            style=f"{color}"
         )
 
     def __rich__(self) -> Text:
