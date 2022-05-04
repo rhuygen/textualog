@@ -21,7 +21,7 @@ class LevelColorSelected(Enum):
     INFO = "green3 on dark_green"
     WARNING = "orange1 on dark_orange3"
     ERROR = "orchid2 on red3"
-    CRITICAL = "magenta3 on dark_magenta"
+    CRITICAL = "magenta1 on dark_magenta"
 
 
 class LevelName(Enum):
