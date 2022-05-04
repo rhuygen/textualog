@@ -79,7 +79,7 @@ class KeyValueLoader:
                     process=process[8:],
                     process_id=process_id[11:],
                     caller=caller[7:],
-                    msg=msg[5:-1]  # also removes the double quotes around the message
+                    msg=msg[4:].strip('"')  # also removes the double quotes around the message
                 )
 
                 records.append(record)
