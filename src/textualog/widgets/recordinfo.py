@@ -4,6 +4,7 @@ from typing import Optional
 
 from rich.panel import Panel
 from rich.text import Text
+from textual import events
 from textual.reactive import Reactive
 from textual.widget import Widget
 
@@ -25,6 +26,9 @@ class RecordInfo(Widget):
         # self.layout_size = PANEL_SIZE
         # self.layout_fraction = 1
         ...
+
+    async def on_click(self, event: events.Click) -> None:
+        self.app.details_widget.visible = not self.app.details_widget.visible
 
     def set(self, record: LogRecord):
         self.record = record
