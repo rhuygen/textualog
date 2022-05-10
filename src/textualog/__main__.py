@@ -1,5 +1,8 @@
 import argparse
+import datetime
+import logging
 import sys
+import threading
 from pathlib import Path
 
 from textual import events
@@ -7,16 +10,43 @@ from textual.app import App
 from textual.keys import Keys
 from textual.reactive import Reactive
 from textual.widgets import Header
+from textual.widgets import Placeholder
 
 from . import __version__
 from .loader import KeyValueLoader
 from .renderables.namespace_tree import EntryClick
+from .system import do_every
+from .system import timer
 from .widgets.footer import Footer
 from .widgets.help import Help
 from .widgets.levels import Levels
 from .widgets.namespaces import Namespaces
 from .widgets.recordinfo import RecordInfo
 from .widgets.records import Records
+
+LOG_FORMAT_KEY_VALUE = (
+    "level=%(levelname)s "
+    "ts=%(asctime)s "
+    "process=%(processName)s "
+    "process_id=%(process)s "
+    "caller=%(name)s:%(lineno)s "
+    "msg=\"%(message)s\""
+)
+
+LOG_FORMAT_DATE = "%Y-%m-%dT%H:%M:%S,%f"
+
+
+class DateTimeFormatter(logging.Formatter):
+
+    def formatTime(self, record, datefmt=None):
+        converted_time = datetime.datetime.fromtimestamp(record.created)
+        if datefmt:
+            return converted_time.strftime(datefmt)
+        formatted_time = converted_time.strftime("%Y-%m-%dT%H:%M:%S")
+        return f"{formatted_time}.{record.msecs:03.0f}"
+
+
+logging.basicConfig(level=logging.ERROR)
 
 
 class TextualLog(App):
@@ -39,6 +69,8 @@ class TextualLog(App):
         self.filename = filename
         self.cursor = 0
         self.loader = None
+        self.details_widget = None
+        self.follow = False
 
     async def on_mount(self, event: events.Mount) -> None:
         """
@@ -51,10 +83,17 @@ class TextualLog(App):
         self.help_widget = Help()
         self.help_widget.visible = False
 
-        await self.view.dock(Header(), edge="top")
-        await self.view.dock(Footer(), edge="bottom")
+        self.details_widget = Placeholder()
+        self.details_widget.visible = False
+
+        self.header = Header()
+        self.footer = Footer()
+
+        await self.view.dock(self.header, edge="top")
+        await self.view.dock(self.footer, edge="bottom")
         await self.view.dock(self.namespaces, edge="left", size=40, z=1)
         await self.view.dock(self.help_widget, edge="right", size=40, z=1)
+        await self.view.dock(self.details_widget, size=20, z=1)
         grid = await self.view.dock_grid(edge="left", name="left")
 
         grid.add_column(size=30, name="left")
@@ -88,6 +127,29 @@ class TextualLog(App):
             # The height of the self.records view is not yet known, so we take a large enough number
 
             self.records.update(self.loader.get_records(0, 500, None))
+
+        # self.set_interval(2.0, self.collect_data)
+
+        self._reload_thread = threading.Thread(
+            target=do_every, args=(2.0, self.collect_data))
+        self._reload_thread.daemon = True
+        self._reload_thread.start()
+
+    @timer()
+    def collect_data(self):
+        if not self.follow or self.loader is None:
+            return
+
+        self.loader.load()
+
+        # The height of the text area of the Records panel
+
+        height = self.records.size.height - 2
+        size = self.loader.size()
+
+        self.cursor = max(0, size - height)
+        self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
+        self.records.refresh(layout=True)
 
     async def on_load(self) -> None:
         """
@@ -128,6 +190,10 @@ class TextualLog(App):
             self.show_namespaces = not self.show_namespaces
         elif event.key == "r":
             self.loader.load()
+        elif event.key == "f":
+            self.follow = not self.follow
+            self.header.style = "white on dark_red" if self.follow else "white on dark_green"
+            # self.collect_data()
         elif event.key == Keys.Escape:
             self.show_help = False
             self.show_namespaces = False
@@ -193,7 +259,15 @@ def main():
         "-l",
         type=str,
         default=None,
-        help="debug log file",
+        help="the full path to the log file that you want to follow",
+    )
+
+    parser.add_argument(
+        "--debug",
+        "-d",
+        action="store_true",
+        default=False,
+        help="send debugging information to the debug log files",
     )
 
     args = parser.parse_args()
@@ -201,7 +275,16 @@ def main():
     if args.log and not Path(args.log).exists():
         raise FileNotFoundError(f"No such file {args.log}")
 
-    TextualLog.run(title="Textual Log Viewer", log=None, filename=args.log)
+    log_filename = "textual.log" if args.debug else None
+
+    if args.debug:
+        file_formatter = DateTimeFormatter(fmt=LOG_FORMAT_KEY_VALUE, datefmt=LOG_FORMAT_DATE)
+        file_handler = logging.FileHandler(filename="textualog.log")
+        file_handler.formatter = file_formatter
+        file_handler.level = logging.DEBUG
+        logging.getLogger().addHandler(file_handler)
+
+    TextualLog.run(title="Textual Log Viewer", log=log_filename, filename=args.log)
 
 
 def _get_version_text():
