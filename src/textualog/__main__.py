@@ -1,5 +1,4 @@
 import argparse
-import datetime
 import logging
 import sys
 import threading
@@ -14,6 +13,7 @@ from textual.widgets import Placeholder
 
 from . import __version__
 from .loader import KeyValueLoader
+from .log import setup_logging
 from .renderables.namespace_tree import EntryClick
 from .system import do_every
 from .system import timer
@@ -23,28 +23,6 @@ from .widgets.levels import Levels
 from .widgets.namespaces import Namespaces
 from .widgets.recordinfo import RecordInfo
 from .widgets.records import Records
-
-LOG_FORMAT_KEY_VALUE = (
-    "level=%(levelname)s "
-    "ts=%(asctime)s "
-    "process=%(processName)s "
-    "process_id=%(process)s "
-    "caller=%(name)s:%(lineno)s "
-    "msg=\"%(message)s\""
-)
-
-LOG_FORMAT_DATE = "%Y-%m-%dT%H:%M:%S,%f"
-
-
-class DateTimeFormatter(logging.Formatter):
-
-    def formatTime(self, record, datefmt=None):
-        converted_time = datetime.datetime.fromtimestamp(record.created)
-        if datefmt:
-            return converted_time.strftime(datefmt)
-        formatted_time = converted_time.strftime("%Y-%m-%dT%H:%M:%S")
-        return f"{formatted_time}.{record.msecs:03.0f}"
-
 
 logging.basicConfig(level=logging.ERROR)
 
@@ -278,11 +256,7 @@ def main():
     log_filename = "textual.log" if args.debug else None
 
     if args.debug:
-        file_formatter = DateTimeFormatter(fmt=LOG_FORMAT_KEY_VALUE, datefmt=LOG_FORMAT_DATE)
-        file_handler = logging.FileHandler(filename="textualog.log")
-        file_handler.formatter = file_formatter
-        file_handler.level = logging.DEBUG
-        logging.getLogger().addHandler(file_handler)
+        setup_logging("textualog.log")
 
     TextualLog.run(title="Textual Log Viewer", log=log_filename, filename=args.log)
 
