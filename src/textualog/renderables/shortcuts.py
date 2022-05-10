@@ -2,8 +2,10 @@ from rich.table import Table
 from textual.keys import Keys
 
 from textualog.unicodes import DOWN
-from textualog.unicodes import LEFT
-from textualog.unicodes import RIGHT
+from textualog.unicodes import END
+from textualog.unicodes import HOME
+from textualog.unicodes import PAGE_DOWN
+from textualog.unicodes import PAGE_UP
 from textualog.unicodes import UP
 
 
@@ -11,10 +13,11 @@ class Shortcuts:
     shortcuts = {
         "navigation": {
             "help": "?",
-            "navigate": f"{LEFT} {RIGHT} {UP} {DOWN}",
+            "navigate": f"{UP} {DOWN} {HOME} {END} {PAGE_UP} {PAGE_DOWN}",
             "close dialog": Keys.Escape,
             "quit": f"{Keys.ControlC} or q",
             "Show Namespaces": "n",
+            "Follow (reload)": "f",
         },
         "Toggle Logging Levels": {
             "DEBUG mode": "d",
