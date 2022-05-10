@@ -1,49 +1,33 @@
-from __future__ import annotations
-
 from typing import Optional
 
 from rich.panel import Panel
 from rich.text import Text
-from textual import events
-from textual.reactive import Reactive
 from textual.widget import Widget
+from textual.reactive import Reactive
 
-from .. import styles
-from ..renderables.logrecord import LogRecord
-
-PANEL_SIZE = 5
+from textualog import styles
+from textualog.renderables.logrecord import LogRecord
 
 
-class RecordInfo(Widget):
+class Details(Widget):
 
     record: Reactive[LogRecord] = Reactive(None)
 
-    def __init__(self, height: int | None = None):
+    def __init__(self):
         super().__init__()
         self.record: Optional[LogRecord] = None
 
-    async def on_mount(self) -> None:
-        # self.layout_size = PANEL_SIZE
-        # self.layout_fraction = 1
-        ...
-
-    async def on_click(self, event: events.Click) -> None:
-        self.app.show_details = True
-
     def set(self, record: LogRecord):
         self.record = record
-        self.app.details_widget.set(self.record)
 
     def render(self) -> Panel:
-
         return Panel(
             self._generate_renderable(),
-            title="[bold]Record Info[/]",
+            title="[bold]Record Details[/]",
             border_style=styles.BORDER_FOCUSED,
             box=styles.BOX,
             title_align="left",
             padding=0,
-            # height=PANEL_SIZE,
         )
 
     def _generate_renderable(self) -> Text:
@@ -57,5 +41,6 @@ class RecordInfo(Widget):
         record.append(f"process ID = {self.record.process_id}\n")
         record.append(f"caller     = {self.record.caller}\n")
         record.append(f"msg        = {self.record.msg}\n")
+        record.append(f"extra      = {self.record.extra}\n")
 
         return record

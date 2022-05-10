@@ -9,7 +9,6 @@ from textual.app import App
 from textual.keys import Keys
 from textual.reactive import Reactive
 from textual.widgets import Header
-from textual.widgets import Placeholder
 
 from . import __version__
 from .loader import KeyValueLoader
@@ -17,6 +16,7 @@ from .log import setup_logging
 from .renderables.namespace_tree import EntryClick
 from .system import do_every
 from .system import timer
+from .widgets.details import Details
 from .widgets.footer import Footer
 from .widgets.help import Help
 from .widgets.levels import Levels
@@ -26,11 +26,14 @@ from .widgets.records import Records
 
 logging.basicConfig(level=logging.ERROR)
 
+MODULE_LOGGER = logging.getLogger("Textual")
+
 
 class TextualLog(App):
 
     show_help = Reactive(False)
     show_namespaces = Reactive(False)
+    show_details = Reactive(False)
 
     # The namespace_tree is just for demonstration purposes. The namespace should be a
     # tree like structure with proper navigation and the possibility to add and remove nodes.
@@ -61,7 +64,7 @@ class TextualLog(App):
         self.help_widget = Help()
         self.help_widget.visible = False
 
-        self.details_widget = Placeholder()
+        self.details_widget = Details()
         self.details_widget.visible = False
 
         self.header = Header()
@@ -113,7 +116,7 @@ class TextualLog(App):
         self._reload_thread.daemon = True
         self._reload_thread.start()
 
-    @timer()
+    @timer(level=logging.DEBUG)
     def collect_data(self):
         if not self.follow or self.loader is None:
             return
@@ -175,6 +178,7 @@ class TextualLog(App):
         elif event.key == Keys.Escape:
             self.show_help = False
             self.show_namespaces = False
+            self.show_details = False
         elif event.key == Keys.Down:
             self.cursor = min(size, self.cursor + 1)
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
@@ -203,6 +207,10 @@ class TextualLog(App):
     async def watch_show_help(self, show_help: bool) -> None:
         """Called when show_help changes."""
         self.help_widget.visible = show_help
+
+    async def watch_show_details(self, show_details: bool) -> None:
+        """Called when show_details changes."""
+        self.details_widget.visible = show_details
 
     async def action_toggle_help(self) -> None:
         """Called when bound help key is pressed."""

@@ -28,5 +28,7 @@ def setup_logging(filename: str):
     file_handler = logging.FileHandler(filename=filename)
     file_handler.formatter = file_formatter
     file_handler.level = logging.DEBUG
+    # The first default handler is the StreamHandler <stderr>
+    logging.getLogger().handlers[0].level = logging.ERROR
     logging.getLogger().addHandler(file_handler)
     logging.getLogger().level = logging.DEBUG

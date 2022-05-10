@@ -43,7 +43,8 @@ class LogRecord:
             caller: str = None,
             process_id: int = None,
             selected: bool = False,
-            **kwargs
+            extra: str = None,
+            **kwargs,
     ):
         self.msg = msg
         self.level = level
@@ -53,6 +54,7 @@ class LogRecord:
         self.caller = caller
         self.process_id = process_id
         self.selected = selected
+        self.extra = extra
 
     def __str__(self) -> str:
         text = (
