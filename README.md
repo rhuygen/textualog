@@ -25,7 +25,14 @@ The `textualog` app should have been installed in your environment, then run the
 ```
 $ textualog --log <path to the log file>
 ```
-In the `examples` directory of this project, you can find an example log file to inspect and play with.
+In the `examples` directory of this project, you can find an example log file to inspect and play with. 
+
+The main view is divided in three panels, (1) a _Records_ panel that displays all the logging records in a colored view, (2) a _Record Info_ panel that displays more details about the selected logging message (a message can be selected by a mouse click), and (3) a _Levels_ panel that displays the standard logging levels. Logging levels can be switched on or off with a key press, d=debug, i=info, w=warning, e=error, c=critical. When you click inside the _Record Info_ panel, the main view will change in a _Record Details_ view that displays all information associated with the selected logging message. This view is mainly used when the logging message has extra multi-line information attached, and depending on the amount of information, this view is scrollable. When the selected logging message contains extra information, the _Record Info_ panel will have an asterisk in the title.  Use the Escape key to return to the main view.
+
+The app can be terminated with the 'q' key or by pressing CTRL-C. If you need a little help on the keyboard shortcuts, press the '?' key to present the _Info Help_ panel on the right side of the terminal. Also here use the Escape key to hide the help panel again.
+
+Pressing the 'n' key will slide in a _Namespaces_ panel on the left side of the Terminal. **This panel is currently not functional**. The idea is to allow the user to filter the logging messages by selecting one or more namespaces.
+
 
 ## Log file formats
 
