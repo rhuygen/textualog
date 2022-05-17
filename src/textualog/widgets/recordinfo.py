@@ -38,7 +38,9 @@ class RecordInfo(Widget):
 
         return Panel(
             self._generate_renderable(),
-            title="[bold]Record Info[/]",
+            title=f"[bold]Record Info"
+                  f"{' *' if self.record is not None and self.record.extra else ''}"
+                  f"[/]",
             border_style=styles.BORDER_FOCUSED,
             box=styles.BOX,
             title_align="left",

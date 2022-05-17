@@ -9,6 +9,7 @@ from textual.app import App
 from textual.keys import Keys
 from textual.reactive import Reactive
 from textual.widgets import Header
+from textual.widgets import ScrollView
 
 from . import __version__
 from .loader import KeyValueLoader
@@ -65,7 +66,8 @@ class TextualLog(App):
         self.help_widget.visible = False
 
         self.details_widget = Details()
-        self.details_widget.visible = False
+        self.details_scroll_view = ScrollView(self.details_widget)
+        self.details_scroll_view.visible = False
 
         self.header = Header()
         self.footer = Footer()
@@ -74,7 +76,7 @@ class TextualLog(App):
         await self.view.dock(self.footer, edge="bottom")
         await self.view.dock(self.namespaces, edge="left", size=40, z=1)
         await self.view.dock(self.help_widget, edge="right", size=40, z=1)
-        await self.view.dock(self.details_widget, size=20, z=1)
+        await self.view.dock(self.details_scroll_view, z=0)
         grid = await self.view.dock_grid(edge="left", name="left")
 
         grid.add_column(size=30, name="left")
@@ -210,7 +212,8 @@ class TextualLog(App):
 
     async def watch_show_details(self, show_details: bool) -> None:
         """Called when show_details changes."""
-        self.details_widget.visible = show_details
+        self.details_widget.refresh(layout=True)
+        self.details_scroll_view.visible = show_details
 
     async def action_toggle_help(self) -> None:
         """Called when bound help key is pressed."""

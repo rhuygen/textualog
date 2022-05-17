@@ -16,7 +16,7 @@ Some of the ideas and code in this project are based on:
 
 The easiest way to install the package is by running the `pip` command in the Python virtual environment of your project:
 ```
-$ python -m pip install textualog
+$ python -m pip install [--upgrade] textualog
 ```
 
 ## Usage
@@ -40,3 +40,9 @@ currently use in my main other projects. The following key=value pairs shall be 
 * `msg=<logging message>`
 
 In the future other formats can be supported by implementing a plugin class. Planned formats are the JSON format, ...
+
+## Roadmap
+
+- [x] Display message details including extra lines that contain further information like e.g. traceback info.
+- [ ] Implement search functionality to search for strings or regular expressions and position the screen at the first match
+- [ ] 

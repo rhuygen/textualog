@@ -1,317 +1,3 @@
-level=WARNING ts=2022-05-02T11:12:49,360413 process=log_cs process_id=52723 caller=egse.logger.log_cs:137 msg="Logger terminated."
-level=DEBUG ts=2022-05-02T11:14:07,888070 process=MainProcess process_id=24425 caller=egse.dsi.esl:88 msg="Locating shared library EtherSpaceLink_v34_86.dylib in dir 'lib/macOS'"
-level=DEBUG ts=2022-05-02T11:14:07,899099 process=MainProcess process_id=24425 caller=egse.config:245 msg="Common-EGSE location is automatically determined: /Users/rik/git/plato-common-egse."
-level=DEBUG ts=2022-05-02T11:14:08,107559 process=MainProcess process_id=24425 caller=egse.dsi.esl:92 msg="Loading shared library: /Users/rik/git/plato-common-egse/build/lib/egse/lib/macOS/EtherSpaceLink_v34_86.dylib"
-level=DEBUG ts=2022-05-02T11:14:08,113461 process=MainProcess process_id=24425 caller=egse.dsi.rmap:107 msg="Locating shared library ESL-RMAP_v34_86.dylib in dir 'lib/macOS'"
-level=DEBUG ts=2022-05-02T11:14:08,331309 process=MainProcess process_id=24425 caller=egse.dsi.rmap:111 msg="Loading shared library: /Users/rik/git/plato-common-egse/build/lib/egse/lib/macOS/ESL-RMAP_v34_86.dylib"
-level=DEBUG ts=2022-05-02T11:14:08,351827 process=MainProcess process_id=24425 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/storage/storage.yaml."
-level=DEBUG ts=2022-05-02T11:14:08,404377 process=storage_cs process_id=24425 caller=egse.storage.storage_cs:191 msg="location = /Users/rik/data/CSL"
-level=DEBUG ts=2022-05-02T11:14:08,407825 process=storage_cs process_id=24425 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/services.yaml."
-level=DEBUG ts=2022-05-02T11:14:08,415367 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_monitoring_frequency', cmd='{delay}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:08,415761 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_hk_frequency', cmd='{delay}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:08,415824 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_logging_level', cmd='{name} {level}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:08,415890 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='quit_server', cmd='', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:08,415991 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='get_process_status', cmd='', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:08,416059 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='get_cs_module', cmd='', device_method=None"
-level=INFO ts=2022-05-02T11:14:08,416252 process=storage_cs process_id=24425 caller=egse.protocol:318 msg="Binding to tcp://*:6102"
-level=INFO ts=2022-05-02T11:14:08,416570 process=storage_cs process_id=24425 caller=egse.protocol:318 msg="Binding to tcp://*:6101"
-level=DEBUG ts=2022-05-02T11:14:08,416847 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='start_observation', cmd='{obsid}', device_method=<function StorageController.start_observation at 0x7fdd482c3a60>"
-level=DEBUG ts=2022-05-02T11:14:08,416944 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='end_observation', cmd='{obsid}', device_method=<function StorageController.end_observation at 0x7fdd482c3af0>"
-level=DEBUG ts=2022-05-02T11:14:08,417012 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='get_obsid', cmd='', device_method=<function StorageController.get_obsid at 0x7fdd482c3b80>"
-level=DEBUG ts=2022-05-02T11:14:08,417075 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='save', cmd='{packet}', device_method=<function StorageController.save at 0x7fdd482c3c10>"
-level=DEBUG ts=2022-05-02T11:14:08,417133 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='read', cmd='{item}', device_method=<function StorageController.read at 0x7fdd482c3ca0>"
-level=DEBUG ts=2022-05-02T11:14:08,417205 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='register', cmd='{client_info}', device_method=<function StorageController.register at 0x7fdd482c3d30>"
-level=DEBUG ts=2022-05-02T11:14:08,417320 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='unregister', cmd='{client_info}', device_method=<function StorageController.unregister at 0x7fdd482c3dc0>"
-level=DEBUG ts=2022-05-02T11:14:08,417364 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='get_registry_names', cmd='', device_method=<function StorageController.get_registry_names at 0x7fdd482c3e50>"
-level=DEBUG ts=2022-05-02T11:14:08,417457 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='cycle_daily_files', cmd='', device_method=<function StorageController.cycle_daily_files at 0x7fdd482c3ee0>"
-level=DEBUG ts=2022-05-02T11:14:08,417534 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='get_storage_location', cmd='', device_method=<function StorageController.get_storage_location at 0x7fdd482c3f70>"
-level=DEBUG ts=2022-05-02T11:14:08,417600 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='new_registration', cmd='{item}, {use_counter}', device_method=<function StorageController.new_registration at 0x7fdd482c60d0>"
-level=DEBUG ts=2022-05-02T11:14:08,417682 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='get_filenames', cmd='{item}', device_method=<function StorageController.get_filenames at 0x7fdd482c6040>"
-level=DEBUG ts=2022-05-02T11:14:08,417761 process=storage_cs process_id=24425 caller=egse.protocol:532 msg="Creating StorageCommand command with name='get_disk_usage', cmd='', device_method=<function StorageController.get_disk_usage at 0x7fdd482c6160>"
-level=DEBUG ts=2022-05-02T11:14:08,417877 process=storage_cs process_id=24425 caller=egse.storage.storage_cs:46 msg="Binding ZeroMQ socket to tcp://*:6100"
-level=INFO ts=2022-05-02T11:14:08,417914 process=storage_cs process_id=24425 caller=egse.protocol:318 msg="Binding to tcp://*:6100"
-level=ERROR ts=2022-05-02T11:14:08,576682 process=storage_cs process_id=64556 caller=egse.storage:837 msg="Could not register OGSE: An item with name 'OGSE' is already registered, please unregister first."
-level=DEBUG ts=2022-05-02T11:14:08,769601 process=MainProcess process_id=24441 caller=egse.resource:205 msg="Resources have been defined: DEFAULT_RESOURCES={'icons': '/icons', 'images': '/images', 'lib': '/lib', 'styles': '/styles', 'data': '/data', 'aeudata': '/aeu/arbdata'}"
-level=DEBUG ts=2022-05-02T11:14:09,666730 process=MainProcess process_id=24441 caller=egse.dsi.esl:88 msg="Locating shared library EtherSpaceLink_v34_86.dylib in dir 'lib/macOS'"
-level=DEBUG ts=2022-05-02T11:14:09,678654 process=MainProcess process_id=24441 caller=egse.config:245 msg="Common-EGSE location is automatically determined: /Users/rik/git/plato-common-egse."
-level=DEBUG ts=2022-05-02T11:14:09,885180 process=MainProcess process_id=24441 caller=egse.dsi.esl:92 msg="Loading shared library: /Users/rik/git/plato-common-egse/build/lib/egse/lib/macOS/EtherSpaceLink_v34_86.dylib"
-level=DEBUG ts=2022-05-02T11:14:09,890467 process=MainProcess process_id=24441 caller=egse.dsi.rmap:107 msg="Locating shared library ESL-RMAP_v34_86.dylib in dir 'lib/macOS'"
-level=DEBUG ts=2022-05-02T11:14:10,110290 process=MainProcess process_id=24441 caller=egse.dsi.rmap:111 msg="Loading shared library: /Users/rik/git/plato-common-egse/build/lib/egse/lib/macOS/ESL-RMAP_v34_86.dylib"
-level=DEBUG ts=2022-05-02T11:14:10,117657 process=MainProcess process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/storage/storage.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,127825 process=MainProcess process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/confman/confman.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,146531 process=confman_cs process_id=24441 caller=egse.confman.confman_cs:215 msg="location = /Users/rik/git/plato-cgse-conf/data/CSL/conf"
-level=DEBUG ts=2022-05-02T11:14:10,149287 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/services.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,157772 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_monitoring_frequency', cmd='{delay}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:10,158110 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_hk_frequency', cmd='{delay}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:10,158175 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_logging_level', cmd='{name} {level}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:10,158222 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='quit_server', cmd='', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:10,158340 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='get_process_status', cmd='', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:10,158398 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='get_cs_module', cmd='', device_method=None"
-level=INFO ts=2022-05-02T11:14:10,158557 process=confman_cs process_id=24441 caller=egse.protocol:318 msg="Binding to tcp://*:6002"
-level=INFO ts=2022-05-02T11:14:10,158805 process=confman_cs process_id=24441 caller=egse.protocol:318 msg="Binding to tcp://*:6001"
-level=DEBUG ts=2022-05-02T11:14:10,163414 process=storage_cs process_id=24425 caller=egse.storage.persistence:1957 msg="Opening file /Users/rik/data/CSL/obsid-table.txt in mode 'a'"
-level=INFO ts=2022-05-02T11:14:10,163654 process=storage_cs process_id=24425 caller=egse.storage:833 msg="Storage successfully registered obsid"
-level=INFO ts=2022-05-02T11:14:10,164067 process=confman_cs process_id=24441 caller=egse.confman:412 msg="Storage successfully registered obsid"
-level=INFO ts=2022-05-02T11:14:10,164416 process=confman_cs process_id=24441 caller=egse.confman:183 msg="Populating cache with Setup Info."
-level=WARNING ts=2022-05-02T11:14:10,164693 process=confman_cs process_id=24441 caller=egse.confman:437 msg="SetupInfo cache is not populated, loading Setup 0 from /Users/rik/git/plato-cgse-conf/data/CSL/conf"
-level=DEBUG ts=2022-05-02T11:14:10,168550 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00000_200909_120000.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,168737 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00066_210902_093852.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,169841 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=INFO ts=2022-05-02T11:14:10,186897 process=confman_cs process_id=24441 caller=egse.confman:443 msg="Setup loaded: /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00000_200909_120000.yaml"
-level=DEBUG ts=2022-05-02T11:14:10,193461 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='start_observation', cmd='{function_info}', device_method=<function ConfigurationManagerController.start_observation at 0x7fc7b8abf9d0>"
-level=DEBUG ts=2022-05-02T11:14:10,199864 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='end_observation', cmd='', device_method=<function ConfigurationManagerController.end_observation at 0x7fc7b8abf940>"
-level=DEBUG ts=2022-05-02T11:14:10,203168 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='get_obsid', cmd='', device_method=<function ConfigurationManagerController.get_obsid at 0x7fc7b8abfa60>"
-level=DEBUG ts=2022-05-02T11:14:10,203260 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='load_setup', cmd='{id}', device_method=<function ConfigurationManagerController.load_setup at 0x7fc7b8abfb80>"
-level=DEBUG ts=2022-05-02T11:14:10,203309 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='get_setup', cmd='*', device_method=<function ConfigurationManagerController.get_setup at 0x7fc7b8abfaf0>"
-level=DEBUG ts=2022-05-02T11:14:10,203355 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='reload_setups', cmd='', device_method=<function ConfigurationManagerController.reload_setups at 0x7fc7b8adfca0>"
-level=DEBUG ts=2022-05-02T11:14:10,203398 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='list_setups', cmd='**', device_method=<function ConfigurationManagerController.list_setups at 0x7fc7b8adfc10>"
-level=DEBUG ts=2022-05-02T11:14:10,203439 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='submit_setup', cmd='{setup} {description}', device_method=<function ConfigurationManagerController.submit_setup at 0x7fc7b8adfaf0>"
-level=DEBUG ts=2022-05-02T11:14:10,203491 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='get_devices_for_current_setup', cmd='', device_method=<function ConfigurationManagerController.get_devices_for_current_setup at 0x7fc7b8adfa60>"
-level=DEBUG ts=2022-05-02T11:14:10,203542 process=confman_cs process_id=24441 caller=egse.protocol:532 msg="Creating ConfigurationManagerCommand command with name='get_setup_for_obsid', cmd='{obsid}', device_method=<function ConfigurationManagerController.get_setup_for_obsid at 0x7fc7b8adfb80>"
-level=DEBUG ts=2022-05-02T11:14:10,234164 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,244732 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00044_210611_123028.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,247729 process=MainProcess process_id=24448 caller=egse.resource:205 msg="Resources have been defined: DEFAULT_RESOURCES={'icons': '/icons', 'images': '/images', 'lib': '/lib', 'styles': '/styles', 'data': '/data', 'aeudata': '/aeu/arbdata'}"
-level=DEBUG ts=2022-05-02T11:14:10,293065 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,300573 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00045_210630_130334.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,342845 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,349924 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00078_210917_084123.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,409969 process=confman_cs process_id=24441 caller=egse.confman.confman_cs:43 msg="Binding ZeroMQ socket to tcp://*:6000"
-level=DEBUG ts=2022-05-02T11:14:10,414589 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=INFO ts=2022-05-02T11:14:10,414672 process=confman_cs process_id=24441 caller=egse.protocol:318 msg="Binding to tcp://*:6000"
-level=DEBUG ts=2022-05-02T11:14:10,422160 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00025_201013_081304.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,437703 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,445596 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00018_201008_145328.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,457710 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,465076 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00040_210609_091842.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,508955 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,517302 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00085_210927_075650.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,583277 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,592162 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00075_210913_094520.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,657057 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,663974 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00076_210916_064922.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,732497 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,741175 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00080_210917_105245.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,851534 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,859707 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00093_211025_183920.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,950642 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:10,959185 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00039_210609_083303.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,001259 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,008169 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00017_201008_084632.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,019248 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,026374 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00050_210727_123334.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,073633 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,081564 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00013_200929_140341.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,086051 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,093372 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00032_210514_132034.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,134039 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,141119 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00020_201009_085413.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,153777 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,160348 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00037_210608_123028.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,167681 process=MainProcess process_id=24448 caller=egse.dsi.esl:88 msg="Locating shared library EtherSpaceLink_v34_86.dylib in dir 'lib/macOS'"
-level=DEBUG ts=2022-05-02T11:14:11,179805 process=MainProcess process_id=24448 caller=egse.config:245 msg="Common-EGSE location is automatically determined: /Users/rik/git/plato-common-egse."
-level=DEBUG ts=2022-05-02T11:14:11,201363 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,202221 process=storage_cs process_id=24425 caller=egse.storage.persistence:1852 msg="Opening file /Users/rik/data/CSL/daily/20220502/20220502_CSL_CM.csv in mode 'w'"
-level=INFO ts=2022-05-02T11:14:11,202457 process=storage_cs process_id=24425 caller=egse.storage:833 msg="Storage successfully registered CM"
-level=DEBUG ts=2022-05-02T11:14:11,209754 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00028_201028_155259.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,224842 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,231110 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00067_210903_073713.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,288999 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,296079 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00021_201009_122234.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,308597 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,315000 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00081_210922_142259.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,378915 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,387048 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00087_211012_102853.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,401776 process=MainProcess process_id=24448 caller=egse.dsi.esl:92 msg="Loading shared library: /Users/rik/git/plato-common-egse/build/lib/egse/lib/macOS/EtherSpaceLink_v34_86.dylib"
-level=DEBUG ts=2022-05-02T11:14:11,408215 process=MainProcess process_id=24448 caller=egse.dsi.rmap:107 msg="Locating shared library ESL-RMAP_v34_86.dylib in dir 'lib/macOS'"
-level=DEBUG ts=2022-05-02T11:14:11,473141 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,481684 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00035_210608_064406.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,523786 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,530834 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00082_210923_094458.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,596062 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,603210 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00064_210901_145926.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,633231 process=MainProcess process_id=24448 caller=egse.dsi.rmap:111 msg="Loading shared library: /Users/rik/git/plato-common-egse/build/lib/egse/lib/macOS/ESL-RMAP_v34_86.dylib"
-level=DEBUG ts=2022-05-02T11:14:11,639981 process=MainProcess process_id=24448 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/storage/storage.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,650555 process=MainProcess process_id=24448 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/confman/confman.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,660464 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,662270 process=MainProcess process_id=24448 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/dpu/dpu.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,667510 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00096_220114_090151.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,761452 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,769595 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00031_210325_084258.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,781973 process=dpu_cs process_id=24448 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/procman/procman.yaml."
-level=CRITICAL ts=2022-05-02T11:14:11,786379 process=dpu.processor process_id=89612 caller=egse.dpu:1442 msg="A fatal error occurred in the DPU Processor, needs to be restarted!"
-level=DEBUG ts=2022-05-02T11:14:11,789293 process=MainProcess process_id=24465 caller=egse.resource:205 msg="Resources have been defined: DEFAULT_RESOURCES={'icons': '/icons', 'images': '/images', 'lib': '/lib', 'styles': '/styles', 'data': '/data', 'aeudata': '/aeu/arbdata'}"
-level=DEBUG ts=2022-05-02T11:14:11,792283 process=procman_cs process_id=24448 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/services.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,801996 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_monitoring_frequency', cmd='{delay}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:11,802335 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_hk_frequency', cmd='{delay}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:11,802405 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_logging_level', cmd='{name} {level}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:11,802459 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='quit_server', cmd='', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:11,802531 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='get_process_status', cmd='', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:11,802640 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='get_cs_module', cmd='', device_method=None"
-level=INFO ts=2022-05-02T11:14:11,802806 process=procman_cs process_id=24448 caller=egse.protocol:318 msg="Binding to tcp://*:6202"
-level=DEBUG ts=2022-05-02T11:14:11,804757 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=INFO ts=2022-05-02T11:14:11,804794 process=procman_cs process_id=24448 caller=egse.protocol:318 msg="Binding to tcp://*:6201"
-level=DEBUG ts=2022-05-02T11:14:11,811868 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00055_210805_135047.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,836665 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='get_cm_proxy', cmd='', device_method=<function ProcessManagerController.get_cm_proxy at 0x7f78a8aa1dc0>"
-level=DEBUG ts=2022-05-02T11:14:11,836832 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='get_devices', cmd='', device_method=<function ProcessManagerController.get_devices at 0x7f78a8aa1e50>"
-level=DEBUG ts=2022-05-02T11:14:11,836907 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='get_core', cmd='', device_method=<function ProcessManagerController.get_core at 0x7f78a8aa1ee0>"
-level=DEBUG ts=2022-05-02T11:14:11,836979 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='start_egse', cmd='', device_method=<function ProcessManagerController.start_egse at 0x7f78a8aa1f70>"
-level=DEBUG ts=2022-05-02T11:14:11,837053 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='start_cs', cmd='{process_name} {sim_mode}', device_method=<function ProcessManagerController.start_cs at 0x7f78a8ab5040>"
-level=DEBUG ts=2022-05-02T11:14:11,837138 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='shut_down_egse', cmd='', device_method=<function ProcessManagerController.shut_down_egse at 0x7f78a8ab50d0>"
-level=DEBUG ts=2022-05-02T11:14:11,837191 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='shut_down_cs', cmd='{process_name}', device_method=<function ProcessManagerController.shut_down_cs at 0x7f78a8ab5160>"
-level=DEBUG ts=2022-05-02T11:14:11,837240 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='start_fitsgen', cmd='', device_method=<function ProcessManagerController.start_fitsgen at 0x7f78a8ab51f0>"
-level=DEBUG ts=2022-05-02T11:14:11,837295 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='stop_fitsgen', cmd='', device_method=<function ProcessManagerController.stop_fitsgen at 0x7f78a8ab5280>"
-level=DEBUG ts=2022-05-02T11:14:11,837339 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='start_fov_hk', cmd='', device_method=<function ProcessManagerController.start_fov_hk at 0x7f78a8ab5310>"
-level=DEBUG ts=2022-05-02T11:14:11,837393 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='stop_fov_hk', cmd='', device_method=<function ProcessManagerController.stop_fov_hk at 0x7f78a8ab53a0>"
-level=DEBUG ts=2022-05-02T11:14:11,837451 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='start_n_fee_hk', cmd='', device_method=<function ProcessManagerController.start_n_fee_hk at 0x7f78a8ab5430>"
-level=DEBUG ts=2022-05-02T11:14:11,837527 process=procman_cs process_id=24448 caller=egse.protocol:532 msg="Creating ProcessManagerCommand command with name='stop_n_fee_hk', cmd='', device_method=<function ProcessManagerController.stop_n_fee_hk at 0x7f78a8ab54c0>"
-level=DEBUG ts=2022-05-02T11:14:11,837611 process=procman_cs process_id=24448 caller=egse.procman.procman_cs:56 msg="Binding ZeroMQ socket to tcp://*:6200"
-level=INFO ts=2022-05-02T11:14:11,837647 process=procman_cs process_id=24448 caller=egse.protocol:318 msg="Binding to tcp://*:6200"
-level=DEBUG ts=2022-05-02T11:14:11,859571 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,867934 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00049_210705_071924.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,876735 process=storage_cs process_id=24425 caller=egse.storage.persistence:1852 msg="Opening file /Users/rik/data/CSL/daily/20220502/20220502_CSL_PM.csv in mode 'w'"
-level=INFO ts=2022-05-02T11:14:11,876952 process=storage_cs process_id=24425 caller=egse.storage:833 msg="Storage successfully registered PM"
-level=DEBUG ts=2022-05-02T11:14:11,910664 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,917252 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00052_210729_124639.yaml."
-level=DEBUG ts=2022-05-02T11:14:11,994839 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,003597 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00009_200917_083806.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,007969 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,015779 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00061_210817_123710.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,070088 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,078179 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00008_170620_151080.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,087354 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,095477 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00065_210901_185558.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,153992 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,161507 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00077_210916_090245.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,225395 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,233592 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00051_210729_092421.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,277339 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,284478 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00084_210925_193952.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,349482 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,356551 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00012_200929_140221.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,360171 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,366421 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00090_211021_104056.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,446017 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,452990 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00041_210610_085309.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,494614 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,501568 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00014_200929_150911.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,506492 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,513792 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00063_210825_132550.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,568815 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,575437 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00072_210909_100248.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,636378 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,643252 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00079_210917_100241.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,701838 process=MainProcess process_id=24465 caller=egse.dsi.esl:88 msg="Locating shared library EtherSpaceLink_v34_86.dylib in dir 'lib/macOS'"
-level=DEBUG ts=2022-05-02T11:14:12,705980 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,713193 process=MainProcess process_id=24465 caller=egse.config:245 msg="Common-EGSE location is automatically determined: /Users/rik/git/plato-common-egse."
-level=DEBUG ts=2022-05-02T11:14:12,713637 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00094_211103_104402.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,803619 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,810587 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00089_211020_134011.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,889451 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,896375 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00074_210910_083400.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,925644 process=MainProcess process_id=24465 caller=egse.dsi.esl:92 msg="Loading shared library: /Users/rik/git/plato-common-egse/build/lib/egse/lib/macOS/EtherSpaceLink_v34_86.dylib"
-level=DEBUG ts=2022-05-02T11:14:12,931886 process=MainProcess process_id=24465 caller=egse.dsi.rmap:107 msg="Locating shared library ESL-RMAP_v34_86.dylib in dir 'lib/macOS'"
-level=DEBUG ts=2022-05-02T11:14:12,960901 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,967506 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00011_200929_135616.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,970822 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:12,977193 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00043_210610_100757.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,017984 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,024640 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00010_200929_135120.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,027947 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,034113 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00092_211025_144142.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,142879 process=MainProcess process_id=24465 caller=egse.dsi.rmap:111 msg="Loading shared library: /Users/rik/git/plato-common-egse/build/lib/egse/lib/macOS/ESL-RMAP_v34_86.dylib"
-level=DEBUG ts=2022-05-02T11:14:13,156590 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,162988 process=MainProcess process_id=24465 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/storage/storage.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,163466 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00083_210923_094458.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,170726 process=MainProcess process_id=24465 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/synoptics/syn.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,188489 process=syn_cs process_id=24465 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/services.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,196621 process=syn_cs process_id=24465 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_monitoring_frequency', cmd='{delay}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:13,196967 process=syn_cs process_id=24465 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_hk_frequency', cmd='{delay}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:13,197028 process=syn_cs process_id=24465 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='set_logging_level', cmd='{name} {level}', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:13,197190 process=syn_cs process_id=24465 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='quit_server', cmd='', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:13,197261 process=syn_cs process_id=24465 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='get_process_status', cmd='', device_method=None"
-level=DEBUG ts=2022-05-02T11:14:13,197334 process=syn_cs process_id=24465 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='get_cs_module', cmd='', device_method=None"
-level=INFO ts=2022-05-02T11:14:13,197555 process=syn_cs process_id=24465 caller=egse.protocol:318 msg="Binding to tcp://*:6206"
-level=INFO ts=2022-05-02T11:14:13,199295 process=syn_cs process_id=24465 caller=egse.protocol:318 msg="Binding to tcp://*:6205"
-level=DEBUG ts=2022-05-02T11:14:13,209801 process=storage_cs process_id=24425 caller=egse.storage.persistence:1852 msg="Opening file /Users/rik/data/CSL/daily/20220502/20220502_CSL_SYN-HK.csv in mode 'w'"
-level=INFO ts=2022-05-02T11:14:13,210099 process=storage_cs process_id=24425 caller=egse.storage:833 msg="Storage successfully registered SYN-HK"
-level=INFO ts=2022-05-02T11:14:13,210615 process=syn_cs process_id=24465 caller=egse.storage:177 msg="Storage successfully registered SYN-HK"
-level=DEBUG ts=2022-05-02T11:14:13,217073 process=syn_cs process_id=24465 caller=egse.protocol:532 msg="Creating SynopticsManagerCommand command with name='store_common_synoptics', cmd='{common_hk}', device_method=<function SynopticsManagerController.store_common_synoptics at 0x7fbbc116a430>"
-level=DEBUG ts=2022-05-02T11:14:13,217206 process=syn_cs process_id=24465 caller=egse.protocol:532 msg="Creating SynopticsManagerCommand command with name='store_th_synoptics', cmd='{th_hk}', device_method=<function SynopticsManagerController.store_th_synoptics at 0x7fbbc116a4c0>"
-level=DEBUG ts=2022-05-02T11:14:13,217354 process=syn_cs process_id=24465 caller=egse.synoptics.syn_cs:50 msg="Binding ZeroMQ socket to tcp://*:6204"
-level=INFO ts=2022-05-02T11:14:13,217410 process=syn_cs process_id=24465 caller=egse.protocol:318 msg="Binding to tcp://*:6204"
-level=DEBUG ts=2022-05-02T11:14:13,232089 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,241261 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00054_210802_134730.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,258341 process=storage_cs process_id=24425 caller=egse.storage.persistence:1852 msg="Opening file /Users/rik/data/CSL/daily/20220502/20220502_CSL_SYN.csv in mode 'w'"
-level=INFO ts=2022-05-02T11:14:13,258616 process=storage_cs process_id=24425 caller=egse.storage:833 msg="Storage successfully registered SYN"
-level=DEBUG ts=2022-05-02T11:14:13,291421 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,298448 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00048_210630_141747.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,341492 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,350067 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00030_210311_134043.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,378208 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,384894 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00073_210909_152131.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,447692 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,454905 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00026_201014_100244.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,469990 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,476838 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00071_210908_181044.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,537860 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,545429 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00060_210817_121215.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,595692 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,602346 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00059_210817_120030.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,653411 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,660321 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00086_210927_144827.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,727495 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,734625 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00027_201014_105039.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,748903 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,755051 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00069_210907_143649.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,812148 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,818617 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00056_210811_094830.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,862893 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,869999 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00022_201011_192802.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,883972 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,890144 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00046_210630_131212.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,933193 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,939620 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00023_201011_193725.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,952046 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:13,958760 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00034_210519_070109.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,002256 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,016456 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00038_210609_082508.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,068661 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,076225 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00088_211014_092338.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,147980 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,155901 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00070_210908_145803.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,214807 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,222443 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00033_210518_204935.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,258824 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,266334 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00057_210811_122915.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,314194 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,321633 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00019_201009_084252.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,332962 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,339850 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00062_210818_090031.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,390366 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,396827 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00024_201013_081001.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,409381 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,415851 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00058_210817_070343.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,469873 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,476332 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00015_200929_151236.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,482586 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,488445 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00029_201028_155331.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,503156 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,509483 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00091_211025_132556.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,631620 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,638807 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00047_210630_131705.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,679590 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,686761 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00042_210610_092540.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,731578 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,738995 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00016_201006_095040.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,749962 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,756997 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00036_210608_070524.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,794031 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,800579 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00068_210903_145324.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,855439 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,861927 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00053_210729_125848.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,908394 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:14:14,915273 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00095_211103_124458.yaml."
-level=DEBUG ts=2022-05-02T11:14:15,006305 process=confman_cs process_id=24441 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
 level=WARNING ts=2022-05-02T11:17:55,575790 process=log_cs process_id=24424 caller=egse.logger.log_cs:137 msg="Logger terminated."
 level=DEBUG ts=2022-05-02T11:18:38,035953 process=MainProcess process_id=25044 caller=egse.dsi.esl:88 msg="Locating shared library EtherSpaceLink_v34_86.dylib in dir 'lib/macOS'"
 level=DEBUG ts=2022-05-02T11:18:38,047156 process=MainProcess process_id=25044 caller=egse.config:245 msg="Common-EGSE location is automatically determined: /Users/rik/git/plato-common-egse."
@@ -546,6 +232,40 @@ level=DEBUG ts=2022-05-02T11:18:43,380925 process=syn_cs process_id=25082 caller
 level=DEBUG ts=2022-05-02T11:18:43,380965 process=syn_cs process_id=25082 caller=egse.protocol:532 msg="Creating ServiceCommand command with name='get_cs_module', cmd='', device_method=None"
 level=INFO ts=2022-05-02T11:18:43,381090 process=syn_cs process_id=25082 caller=egse.protocol:318 msg="Binding to tcp://*:6206"
 level=INFO ts=2022-05-02T11:18:43,382640 process=syn_cs process_id=25082 caller=egse.protocol:318 msg="Binding to tcp://*:6205"
+level=ERROR ts=2022-05-12T16:50:52,683203 process=MainProcess process_id=44977 caller=egse.export_register_map:180 msg="[Errno 45] Unable to open file (unable to lock file, errno = 45, error message = 'Operation not supported')"
+Traceback (most recent call last):
+  File "create_hdf5_report.py", line 174, in cli
+    row = extract_register_values(Path(filename))
+  File "create_hdf5_report.py", line 62, in extract_register_values
+    with h5.get_file(filename, mode='r') as hdf5_file:
+  File "/Users/rik/git/plato-common-egse/src/egse/h5.py", line 137, in get_file
+    return h5py.File(filename, mode)
+  File "/Users/rik/git/plato-common-egse/venv38/lib/python3.8/site-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/Users/rik/git/plato-common-egse/venv38/lib/python3.8/site-packages/h5py/_hl/files.py", line 220, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+OSError: [Errno 45] Unable to open file (unable to lock file, errno = 45, error message = 'Operation not supported')
+
+level=ERROR ts=2022-05-12T16:50:52,688099 process=MainProcess process_id=44977 caller=egse.export_register_map:180 msg="[Errno 45] Unable to open file (unable to lock file, errno = 45, error message = 'Operation not supported')"
+Traceback (most recent call last):
+  File "create_hdf5_report.py", line 174, in cli
+    row = extract_register_values(Path(filename))
+  File "create_hdf5_report.py", line 62, in extract_register_values
+    with h5.get_file(filename, mode='r') as hdf5_file:
+  File "/Users/rik/git/plato-common-egse/src/egse/h5.py", line 137, in get_file
+    return h5py.File(filename, mode)
+  File "/Users/rik/git/plato-common-egse/venv38/lib/python3.8/site-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/Users/rik/git/plato-common-egse/venv38/lib/python3.8/site-packages/h5py/_hl/files.py", line 220, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+OSError: [Errno 45] Unable to open file (unable to lock file, errno = 45, error message = 'Operation not supported')
+
 level=DEBUG ts=2022-05-02T11:18:43,393227 process=storage_cs process_id=25044 caller=egse.storage.persistence:1852 msg="Opening file /Users/rik/data/CSL/daily/20220502/20220502_CSL_SYN-HK.csv in mode 'a'"
 level=INFO ts=2022-05-02T11:18:43,393386 process=storage_cs process_id=25044 caller=egse.storage:833 msg="Storage successfully registered SYN-HK"
 level=INFO ts=2022-05-02T11:18:43,393923 process=syn_cs process_id=25082 caller=egse.storage:177 msg="Storage successfully registered SYN-HK"
@@ -557,72 +277,6 @@ level=DEBUG ts=2022-05-02T11:18:43,418715 process=confman_cs process_id=25057 ca
 level=DEBUG ts=2022-05-02T11:18:43,425603 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00048_210630_141747.yaml."
 level=DEBUG ts=2022-05-02T11:18:43,439043 process=storage_cs process_id=25044 caller=egse.storage.persistence:1852 msg="Opening file /Users/rik/data/CSL/daily/20220502/20220502_CSL_SYN.csv in mode 'a'"
 level=INFO ts=2022-05-02T11:18:43,439201 process=storage_cs process_id=25044 caller=egse.storage:833 msg="Storage successfully registered SYN"
-level=DEBUG ts=2022-05-02T11:18:43,467981 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,475101 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00030_210311_134043.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,501786 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,508375 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00073_210909_152131.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,571998 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,578881 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00026_201014_100244.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,592819 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,599078 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00071_210908_181044.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,660265 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,666843 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00060_210817_121215.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,756984 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,763814 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00059_210817_120030.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,816696 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,823740 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00086_210927_144827.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,888455 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,895045 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00027_201014_105039.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,908781 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,914909 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00069_210907_143649.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,969102 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:43,975521 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00056_210811_094830.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,021864 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,028951 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00022_201011_192802.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,041970 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,048634 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00046_210630_131212.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,091237 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,099729 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00023_201011_193725.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,113691 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,120255 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00034_210519_070109.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,155458 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,162052 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00038_210609_082508.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,200232 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,206710 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00088_211014_092338.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,270821 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,277381 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00070_210908_145803.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,334834 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,341296 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00033_210518_204935.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,374604 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,381151 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00057_210811_122915.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,426836 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,433288 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00019_201009_084252.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,444052 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,450104 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00062_210818_090031.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,499541 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,506320 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00024_201013_081001.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,518633 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,524502 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00058_210817_070343.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,574378 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,580744 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00015_200929_151236.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,586870 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,592779 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00029_201028_155331.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,606840 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,612802 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00091_211025_132556.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,693899 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,700965 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00047_210630_131705.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,743116 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,749772 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00042_210610_092540.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,789450 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,796060 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00016_201006_095040.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,806022 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,812324 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00036_210608_070524.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,850369 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,857160 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00068_210903_145324.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,911297 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,917874 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00053_210729_125848.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,958433 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
-level=DEBUG ts=2022-05-02T11:18:44,964676 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-cgse-conf/data/CSL/conf/SETUP_CSL_00095_211103_124458.yaml."
 level=DEBUG ts=2022-05-02T11:18:45,054679 process=confman_cs process_id=25057 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/.cgse/local_settings.yaml."
 level=INFO ts=2022-05-02T11:18:45,061461 process=confman_cs process_id=25057 caller=egse.confman:203 msg="SetupInfo cache populated."
 level=DEBUG ts=2022-05-02T11:20:09,223713 process=MainProcess process_id=25215 caller=egse.resource:205 msg="Resources have been defined: DEFAULT_RESOURCES={'icons': '/icons', 'images': '/images', 'lib': '/lib', 'styles': '/styles', 'data': '/data', 'aeudata': '/aeu/arbdata'}"
@@ -682,12 +336,140 @@ level=DEBUG ts=2022-05-02T11:23:06,644599 process=MainProcess process_id=25528 c
 level=DEBUG ts=2022-05-02T11:23:06,845539 process=MainProcess process_id=25528 caller=egse.dsi.rmap:111 msg="Loading shared library: /Users/rik/git/plato-common-egse/build/lib/egse/lib/macOS/ESL-RMAP_v34_86.dylib"
 level=DEBUG ts=2022-05-02T11:23:06,851853 process=MainProcess process_id=25528 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/storage/storage.yaml."
 level=DEBUG ts=2022-05-02T11:23:06,861203 process=MainProcess process_id=25528 caller=egse.settings:147 msg="Parsing YAML configuration file /Users/rik/git/plato-common-egse/src/egse/confman/confman.yaml."
+level=DEBUG ts=2022-05-02T11:23:06,861304 process=dpu.processor process_id=33551 caller=egse.dpu:1505 msg="Register Map for N-FEE
+reg_0_config:
+    v_start=0
+    v_end=4509
+reg_1_config:
+    charge_injection_width=0
+    charge_injection_gap=0
+reg_2_config:
+    parallel_toi_period=875
+    parallel_clk_overlap=250
+    ccd_readout_order=228
+reg_3_config:
+    n_final_dump=0
+    h_end=2294
+    charge_injection_en=0
+    tri_level_clk_en=0
+    img_clk_dir=0
+    reg_clk_dir=0
+reg_4_config:
+    packet_size=32140
+    int_sync_period=6250
+reg_5_config:
+    Trap_Pumping_Dwell_counter=12500
+    sync_sel=0
+    sensor_sel=3
+    digitise_en=1
+    DG_en=0
+    ccd_read_en=1
+    conv_dly=15
+    High_precision_HK_en=0
+reg_6_config:
+    ccd1_win_list_ptr=0
+reg_7_config:
+    ccd1_pktorder_list_ptr=0
+reg_8_config:
+    ccd1_win_list_length=0
+    ccd1_win_size_x=0
+    ccd1_win_size_y=0
+    reg_8_config_reserved=0
+reg_9_config:
+    ccd2_win_list_ptr=0
+reg_10_config:
+    ccd2_pktorder_list_ptr=0
+reg_11_config:
+    ccd2_win_list_length=0
+    ccd2_win_size_x=0
+    ccd2_win_size_y=0
+    reg_11_config_reserved=0
+reg_12_config:
+    ccd3_win_list_ptr=0
+reg_13_config:
+    ccd3_pktorder_list_ptr=0
+reg_14_config:
+    ccd3_win_list_length=0
+    ccd3_win_size_x=0
+    ccd3_win_size_y=0
+    reg_14_config_reserved=0
+reg_15_config:
+    ccd4_win_list_ptr=0
+reg_16_config:
+    ccd4_pktorder_list_ptr=0
+reg_17_config:
+    ccd4_win_list_length=0
+    ccd4_win_size_x=0
+    ccd4_win_size_y=0
+    reg_17_config_reserved=0
+reg_18_config:
+    ccd_vod_config=3276
+    ccd1_vrd_config=3685
+    ccd2_vrd_config=101
+reg_19_config:
+    ccd2_vrd_config=14
+    ccd3_vrd_config=3685
+    ccd4_vrd_config=3685
+    ccd_vgd_config=14
+reg_20_config:
+    ccd_vgd_config=207
+    ccd_vog_config=410
+    ccd_ig_hi_config=0
+reg_21_config:
+    ccd_ig_lo_config=0
+    trk_hld_hi=4
+    trk_hld_lo=14
+    cont_rst_on=0
+    cont_cds_on=0
+    ccd_mode_config=0
+    reg_21_config_reserved=0
+    clear_error_flag=0
+reg_22_config:
+    r_cfg1=7
+    r_cfg2=11
+    cdsclp_lo=9
+    reg_22_config_reserved=0
+reg_23_config:
+    ccd1_last_Epacket=0
+    ccd1_last_Fpacket=0
+    ccd2_last_Epacket=0
+    reg_23_config_reserved=0
+reg_24_config:
+    ccd2_last_Fpacket=0
+    ccd3_last_Epacket=0
+    ccd3_last_Fpacket=0
+    reg_24_config_reserved=0
+reg_25_config:
+    ccd4_last_Epacket=0
+    ccd4_last_Fpacket=0
+    Surface_Inversion_counter=100
+    reg_25_config_reserved=0
+reg_26_config:
+    Readout_pause_counter=2000
+    Trap_Pumping_Shuffle_counter=1000
+"
 level=WARNING ts=2022-05-02T19:02:32,738949 process=confman_cs process_id=25057 caller=egse.confman.confman_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
 level=WARNING ts=2022-05-02T19:02:33,155803 process=syn_cs process_id=25082 caller=egse.synoptics.syn_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
 level=WARNING ts=2022-05-02T19:02:31,966084 process=procman_cs process_id=25064 caller=egse.procman.procman_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
 level=WARNING ts=2022-05-02T19:03:59,830339 process=syn_cs process_id=25082 caller=egse.synoptics.syn_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
 level=WARNING ts=2022-05-02T19:03:59,835593 process=procman_cs process_id=25064 caller=egse.procman.procman_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
 level=WARNING ts=2022-05-02T19:03:59,840218 process=confman_cs process_id=25057 caller=egse.confman.confman_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
+level=ERROR ts=2022-05-02T19:03:59,934126 process=ogse_cs process_id=63885 caller=egse.collimator.fcul.ogse_cs:88 msg="Caught Exception: invalid literal for int() with base 10: '0.0'"
+Traceback (most recent call last):
+  File "/Users/rik/git/plato-common-egse/src/egse/collimator/fcul/ogse_cs.py", line 81, in start
+    control_server.serve()
+  File "/Users/rik/git/plato-common-egse/src/egse/control.py", line 261, in serve
+    storage_manager and self.register_to_storage_manager()
+  File "/Users/rik/git/plato-common-egse/src/egse/control.py", line 374, in register_to_storage_manager
+    "column_names": list(self.device_protocol.get_housekeeping().keys()),
+  File "/Users/rik/git/plato-common-egse/src/egse/collimator/fcul/ogse_protocol.py", line 45, in get_housekeeping
+    ogse_status = self.device.status()
+  File "/Users/rik/git/plato-common-egse/src/egse/mixin.py", line 329, in command_wrapper
+    response = process_response(response)
+  File "/Users/rik/git/plato-common-egse/src/egse/collimator/fcul/ogse.py", line 239, in decode_status_command
+    att_index = int(att_index[1:-1])  # cut off the leading '#' and the trailing ','
+ValueError: invalid literal for int() with base 10: '0.0'
+
 level=WARNING ts=2022-05-02T19:04:03,204096 process=syn_cs process_id=25082 caller=egse.synoptics.syn_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
 level=WARNING ts=2022-05-02T19:04:02,867278 process=procman_cs process_id=25064 caller=egse.procman.procman_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
 level=WARNING ts=2022-05-02T19:04:03,029600 process=confman_cs process_id=25057 caller=egse.confman.confman_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
@@ -696,3 +478,14 @@ level=WARNING ts=2022-05-02T19:04:11,629427 process=procman_cs process_id=25064 
 level=WARNING ts=2022-05-02T19:04:11,633167 process=confman_cs process_id=25057 caller=egse.confman.confman_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
 level=WARNING ts=2022-05-02T19:04:15,380978 process=syn_cs process_id=25082 caller=egse.synoptics.syn_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
 level=WARNING ts=2022-05-02T19:04:15,380965 process=procman_cs process_id=25064 caller=egse.procman.procman_cs:353 msg="Couldn't connect to the Storage manager to store housekeeping: Proxy is not connected when entering the context."
+level=ERROR ts=2022-05-12T07:50:56,043197 process=ogse_cs process_id=3367 caller=egse.collimator.fcul.ogse_cs:88 msg="Caught Exception: 'Setup' object has no attribute 'gse'"
+Traceback (most recent call last):
+  File "/Users/rik/git/plato-common-egse/src/egse/collimator/fcul/ogse_cs.py", line 80, in start
+    control_server = OGSEControlServer()
+  File "/Users/rik/git/plato-common-egse/src/egse/collimator/fcul/ogse_cs.py", line 33, in __init__
+    self.device_protocol = OGSEProtocol(self)
+  File "/Users/rik/git/plato-common-egse/src/egse/collimator/fcul/ogse_protocol.py", line 24, in __init__
+    self.fwc_calibration = GlobalState.setup.gse.ogse.calibration.fwc_calibration
+  File "/Users/rik/git/plato-common-egse/src/egse/setup.py", line 261, in __getattribute__
+    value = object.__getattribute__(self, key)
+AttributeError: 'Setup' object has no attribute 'gse'

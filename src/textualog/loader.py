@@ -92,8 +92,8 @@ class KeyValueLoader:
             if match_count >= num_lines:
                 break
 
-        # if sub_message:
-        #     print('\n'.join(sub_message))
+        if sub_message and record is not None:
+            record.extra = '\n'.join(sub_message)
 
         self._records = records
 
