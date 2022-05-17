@@ -106,6 +106,7 @@ class TextualLog(App):
             self.loader = KeyValueLoader(self.filename)
             self.loader.load()
             self.loader.process(0, 500, None)
+            self.footer.log_size = self.loader.size()
 
             # The height of the self.records view is not yet known, so we take a large enough number
 
@@ -133,6 +134,8 @@ class TextualLog(App):
         self.cursor = max(0, size - height)
         self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         self.records.refresh(layout=True)
+
+        self.footer.log_size = size
 
     async def on_load(self) -> None:
         """
@@ -173,6 +176,7 @@ class TextualLog(App):
             self.show_namespaces = not self.show_namespaces
         elif event.key == "r":
             self.loader.load()
+            self.footer.log_size = self.loader.size()
         elif event.key == "f":
             self.follow = not self.follow
             self.header.style = "white on dark_red" if self.follow else "white on dark_green"
@@ -183,21 +187,27 @@ class TextualLog(App):
             self.show_details = False
         elif event.key == Keys.Down:
             self.cursor = min(size, self.cursor + 1)
+            self.footer.log_offset = self.cursor
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.Up:
             self.cursor = max(0, self.cursor - 1)
+            self.footer.log_offset = self.cursor
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.PageDown:
             self.cursor = min(size, self.cursor+(height-1))
+            self.footer.log_offset = self.cursor
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.PageUp:
             self.cursor = max(0, self.cursor-(height-1))
+            self.footer.log_offset = self.cursor
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.End:
             self.cursor = max(0, size - height)
+            self.footer.log_offset = self.cursor
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         elif event.key == Keys.Home:
             self.cursor = 0
+            self.footer.log_offset = self.cursor
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
 
         self.records.refresh(layout=True, repaint=True)

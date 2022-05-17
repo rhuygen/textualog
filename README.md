@@ -45,4 +45,4 @@ In the future other formats can be supported by implementing a plugin class. Pla
 
 - [x] Display message details including extra lines that contain further information like e.g. traceback info.
 - [ ] Implement search functionality to search for strings or regular expressions and position the screen at the first match
-- [ ] 
+- [ ] Start work on filtering log messages based on their namespace
