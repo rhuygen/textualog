@@ -1,5 +1,6 @@
 from itertools import islice
 from typing import List
+from typing import Optional
 
 from rich.text import Text
 
@@ -40,6 +41,7 @@ class KeyValueLoader:
 
         self._size = len(self._lines)
 
+    # This should really be __len__
     def size(self) -> int:
         """Returns the total number of lines in the log file."""
         return self._size
@@ -55,6 +57,7 @@ class KeyValueLoader:
         sub_message: List[str] = []
         in_sub_message = False
         records = []
+        record: Optional[LogRecord] = None
         match_count = 0
         for count, line in enumerate(islice(self._lines, start, None)):
             if count > MAX_NUM_LINES:
@@ -64,7 +67,8 @@ class KeyValueLoader:
                 sub_message.append(line)
                 continue
             if in_sub_message:
-                # print('\n'.join(sub_message))
+                if record is not None:
+                    record.extra = '\n'.join(sub_message)
                 sub_message = []
                 in_sub_message = False
 
