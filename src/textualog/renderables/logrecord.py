@@ -69,7 +69,9 @@ class LogRecord:
         color = LevelColorSelected[level].value if self.selected else LevelColor[level].value
         return Text(
             f"{format_datetime(from_timestamp(self.created))} "
-            f"{LevelName(self.level).name} "
+            f"{LevelName(self.level).name:>8s}"
+            f"{'*' if self.extra else ' '}"
+            f"{self.caller[:20]:<20s} "
             f"{self.msg}",
             style=f"{color}"
         )
