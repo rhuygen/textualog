@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import contextlib
 from typing import List
 from typing import Optional
 
@@ -41,14 +42,12 @@ class Records(Widget):
 
         idx = event.y - 1  # Records is a Panel with the header as the first line
 
-        try:
+        with contextlib.suppress(IndexError):
             record = self.records[idx]
             self.app.record_info.set(record)
             record.selected = True
             self._selected_idx = idx
             self.refresh(repaint=True)
-        except IndexError:
-            pass
 
     def render(self) -> Panel:
         return Panel(
