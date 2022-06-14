@@ -1,3 +1,4 @@
+import logging
 from itertools import islice
 from typing import List
 from typing import Optional
@@ -10,6 +11,8 @@ from .widgets.levels import Levels
 
 DEFAULT_NUM_LINES = 100
 MAX_NUM_LINES = 100_000
+
+MODULE_LOGGER = logging.getLogger("Textual.loader")
 
 
 # KeyValueLoader is a class that loads log files that have a key-value format.
@@ -46,11 +49,34 @@ class KeyValueLoader:
         """Returns the total number of lines in the log file."""
         return self._size
 
-    def process(self, start: int = 0, num_lines: int = DEFAULT_NUM_LINES, levels: Levels = None):
+    @property
+    def offset(self):
+        return self._offset
+
+    def process(self,
+                start: int = 0, num_lines: int = DEFAULT_NUM_LINES, levels: Levels = None,
+                direction: int = 0):
         """Process a number of lines and creates a list of Records for those lines."""
 
         # * could keep track of those line that have been processed -> no need to process again
         # * sub_messages are e.g. Traceback or multiline messages
+
+        MODULE_LOGGER.info(f"Before backtracking: {start=}, {num_lines=}")
+
+        # if start falls in the middle of a sub_message,
+        #  * we go back until the actual log message if direction is -1
+        #  * go forward until the actual log message if direction is +1
+
+        if direction > 0:
+            while start < self._size and not self._lines[start].startswith("level="):
+                start += 1
+        elif direction < 0:
+            while start > 0 and not self._lines[start].startswith("level="):
+                start -= 1
+        else:
+            ...
+
+        MODULE_LOGGER.info(f"After backtracking:  {start=}, {num_lines=}")
 
         self._offset = start
 
@@ -117,9 +143,10 @@ class KeyValueLoader:
     def get_records(self,
                     start: int = 0,
                     num_lines: int = DEFAULT_NUM_LINES,
-                    levels: Levels = None) -> List[LogRecord]:
+                    levels: Levels = None,
+                    direction: int = 0) -> List[LogRecord]:
 
-        self.process(start, num_lines, levels)
+        self.process(start, num_lines, levels, direction)
 
         return self._records
 

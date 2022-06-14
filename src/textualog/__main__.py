@@ -16,7 +16,6 @@ from .loader import KeyValueLoader
 from .log import setup_logging
 from .renderables.namespace_tree import EntryClick
 from .system import do_every
-from .system import timer
 from .widgets.details import Details
 from .widgets.footer import Footer
 from .widgets.help import Help
@@ -119,7 +118,7 @@ class TextualLog(App):
         self._reload_thread.daemon = True
         self._reload_thread.start()
 
-    @timer(level=logging.DEBUG)
+    # @timer(level=logging.DEBUG)
     def collect_data(self):
         if not self.follow or self.loader is None:
             return
@@ -134,7 +133,7 @@ class TextualLog(App):
         self.cursor = max(0, size - height)
         self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
         self.records.refresh(layout=True)
-
+        self.cursor = self.loader.offset  # the cursor/offset might have changed
         self.footer.log_size = size
 
     async def on_load(self) -> None:
@@ -187,20 +186,20 @@ class TextualLog(App):
             self.show_details = False
         elif event.key == Keys.Down:
             self.cursor = min(size, self.cursor + 1)
-            self.footer.log_offset = self.cursor
-            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels, +1))
+            self.footer.log_offset = self.cursor = self.loader.offset
         elif event.key == Keys.Up:
             self.cursor = max(0, self.cursor - 1)
-            self.footer.log_offset = self.cursor
-            self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
+            self.records.replace(self.loader.get_records(self.cursor, height, self.levels, -1))
+            self.footer.log_offset = self.cursor = self.loader.offset
         elif event.key == Keys.PageDown:
             self.cursor = min(size, self.cursor+(height-1))
-            self.footer.log_offset = self.cursor
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
+            self.footer.log_offset = self.cursor = self.loader.offset
         elif event.key == Keys.PageUp:
             self.cursor = max(0, self.cursor-(height-1))
-            self.footer.log_offset = self.cursor
             self.records.replace(self.loader.get_records(self.cursor, height, self.levels))
+            self.footer.log_offset = self.cursor = self.loader.offset
         elif event.key == Keys.End:
             self.cursor = max(0, size - height)
             self.footer.log_offset = self.cursor
